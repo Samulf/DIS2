@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Duel in Shotguns</title>
+    <link href="style.css" type="text/css" rel="Stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="myjQuery.js"></script>
+   
+</head>
+<body>
+    
+    <div class="container">
+
+        <ul id="top">
+            <li><img id="headbild" src="bilder/dueltop.png"></li>
+            <li><img id="soundbild" src="bilder/sound.jpg" onclick="soundOnOff()"></li>
+        </ul>
+           
+
+       
+            <div class="container2">
+                    <div class="game">
+                        <div id="play">          
+                        <ul>
+                            <li id="topbarleft">YOU</li>
+                            <li id="topbarright">COMPUTER</li>
+                        </ul>                     
+                            <ul>
+                                <li id="topbarleft">Bullets: <span id="playerBullets"></span></li>
+                                <li id="topbarleft">Rounds won: <span id="playerRounds"></span></li>
+                                <li id="topbarright">Bullets: <span id="computerBullets"></span></li>
+                                <li id="topbarright">Rounds won: <span id="computerRounds"></span></li>
+                                
+                                
+                            </ul> 
+                        </div>  
+                       
+                                <img id="shotgunstart" src="bilder/duel2.png"></img> <br>
+                            <img id="startbtn" src="bilder/buttons/start.png" onclick="hideStart()" onmouseover="startOver();" onmouseout="startOut();" ></img>
+                      
+
+                        <div class="playground1">
+                                <img id="cowboy1" src="bilder/1idle.png">
+                        </div>
+                        <div class="playground2">
+                                <img id="cowboy2" src="bilder/2idle.png">
+                        </div>
+                    </div>
+    
+        </div>
+
+            <div class="play2">
+                    <ul>
+                            <li id="pCom"></li>
+                            <li id="cCom"></li>
+                        </ul>                     
+            </div>
+          
+                    <div class="bar">
+                            <ul>
+                                <li>
+                                        <img id="load" src="bilder/buttons/btnload.png" onclick="player.pLoad();" onmouseover="loadOver();" onmouseout="loadOut();"></img>
+                                </li>
+                                <li>
+                                        <img id="block" src="bilder/buttons/btnblock.png" onclick="player.pBlock()" onmouseover="blockOver();" onmouseout="blockOut();"></img>
+                                </li>
+                                <li>
+                                        <img id="shoot" src="bilder/buttons/btnshoot.png" onclick="player.pShoot()" onmouseover="shootOver();" onmouseout="shootOut();"></img>
+                                </li>
+                                <li>
+                                        <img id="shotknapp" src="bilder/buttons/shotgun.png" onclick="player.pShotgun()" onmouseover="shotgunOver();" onmouseout="shotgunOut();"></img>
+                                </li>
+                        
+                                </ul>
+                            </div>
+           
+
+       
+       
+        </div>
+
+        <script src="myjavascript.js"></script>         
+</body>
+</html>

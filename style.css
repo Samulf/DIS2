@@ -1,0 +1,202 @@
+body{
+    background-color: black;
+}
+
+.container{
+    width: 800px;
+    height:700px;
+     margin:auto;
+   }
+
+    .bar{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        width:700px;
+        margin: auto;
+        visibility: hidden;
+    }
+
+    #top{
+        list-style-type: none;
+        margin-left:10px;
+        margin-right:50px;
+        display: flex;
+    }
+  #soundbild{
+      width:40px;
+      height:40px;
+      margin-left:450px;
+      margin-top:20px;
+  }
+
+    #headbild{
+        margin-left:230px;
+        margin-bottom: -15px;
+        width: 257px;
+        height: 100px;
+        
+    }
+
+    .bar ul{
+        list-style-type: none;
+        margin-left:50px;
+        display: flex;
+         justify-content: center;
+    }
+
+    .bar li{
+       margin-top: 20px;
+       margin-bottom: 20px;
+        list-style-type: none;
+        margin-right: 50px;
+        text-shadow: -2px 0 red, 0 2px red, 2px 0 red, 0 -2px red;
+        font-stretch: semi-expanded;
+        font-size: 30px;
+                
+        }
+        
+        .bar img{
+            width:96px;
+            height:108px;
+        }
+
+        .bar li:hover{
+            color:rgb(255, 255, 255);
+            text-shadow: -2px 0 green, 0 2px green, 2px 0 green, 0 -2px green;
+            cursor: pointer;
+          }
+
+          .container2{
+            margin-top:100px;
+            width: 700px;
+            height:400px;
+            background-image: url("bilder/back.png");
+            background-size: 700px 400px;
+            margin:auto;
+          }
+          .game{
+           
+            margin-top:100px;
+             width: 700px;
+             height:400px;
+             margin:auto;
+           }
+
+            
+            #shotgunstart{
+                width:200px;
+                height:75px;
+                margin-top:50px;
+                margin-left:250px;
+            }
+
+            #startbtn{
+                width:100px;
+                height:40px;
+                margin-top:15px;
+                margin-left:-48px;
+               
+            }
+
+
+          .playground2{
+              width:350px;
+              height:150px;
+              float: left;
+              margin:auto;
+              margin-top:25px;
+             
+          }
+          .playground1{
+            width:350px;
+            height:150px;
+            float: left;
+            margin:auto;
+            margin-top:85px;
+           
+        }
+
+          #play{   
+              height:40px;
+              width: 700px;
+              background-color:rgba(128, 128, 128, 0.479);
+             text-align: center;
+             visibility: hidden;
+
+             
+          }
+          .play2{   
+            height:30px;
+            width: 700px;
+            background-color:rgb(212, 122, 52);
+            text-align: center;
+            margin-left: 50px;
+            color:black;
+            font-family: arial;
+            font-size: 20px;
+            box-shadow: 3px 5px 2px rgb(129, 62, 0);
+        }
+   
+
+          #play ul{
+            list-style-type: none;
+            margin-left:10px;
+            margin-right:50px;
+            display: flex;
+                    }
+    
+        #play li{
+            margin:auto;
+            margin-top: 3px;
+            margin-bottom: -20px;
+            list-style-type: none;        
+            }
+
+            #topbarleft{
+                margin-left:10px;
+                margin-top: 3px;
+                margin-bottom: -20px;
+                list-style-type: none;
+            }
+            #topbarright{
+                margin-right:10px;
+                margin-top: 3px;
+                margin-bottom: -20px;
+                list-style-type: none;
+            }
+
+            .play2 p{
+                margin-left:50px;
+                margin-right:50px;
+            }
+  
+            .play2 ul{
+              list-style-type: none;
+              margin-left:10px;
+              margin-right:50px;
+              display: flex;
+               
+          }
+      
+          .play2 li{
+              margin:auto;
+              margin-top: 5px;
+              list-style-type: none;        
+              }
+
+              #cowboy1{
+                visibility: hidden;
+                  margin-top:70px;
+                  margin-left:100px;
+              }
+        
+              #cowboy2{
+                  visibility: hidden;
+                margin-top:80px;
+                margin-left:250px;
+              }
+
+              #shotknapp{
+                  visibility: hidden;
+              }
+      
