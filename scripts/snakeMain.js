@@ -33,7 +33,8 @@ var PLAY = true,
 	ctx,
 	keystate,
 	frames,
-	score;
+	score,
+	topTenHighScores = [];
 
 //#endregion
 
@@ -115,7 +116,8 @@ function getCellArrayForType(cellType) {
 	return cellArray;
 }
 
-function init() {
+async function init() {
+	await getHighscores(printHighscore)
 	$('#status').text(PLAY);
 	grid.init(EMPTY, COLS, ROWS);
 	score = 0;
@@ -194,7 +196,7 @@ function update() {
 
 			var newEnemyPos = setNewEnemyPosition(snake.head.x, snake.head.y);
 
-			// om enemy kommer ta endel av Snake.
+			// om enemy kommer ta en del av Snake.
 			if (grid.get(newEnemyPos.x, newEnemyPos.y) === SNAKE) {
 				restart()
 			}
@@ -345,7 +347,7 @@ function main() {
 		}
 	})
 
-	getHighscores(printHighscore);
+	// getHighscores(printHighscore);
 	init();
 	loop();
 
@@ -360,16 +362,45 @@ async function getHighscores(printHighscore) {
 		.then(json => printHighscore(json));
 }
 
+async function postHighscore(highscore) {
+
+	const url = 'https://snök.azurewebsites.net/api/savehighscore';
+
+	postData(url, highscore)
+  		.then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
+		.catch(error => console.error(error));
+}
+
+function postData(url = '', data = {}) {
+	// Default options are marked with *
+	  return fetch(url, {
+		 method: 'POST', // *GET, POST, PUT, DELETE, etc.
+		 mode: 'cors', // no-cors, cors, *same-origin
+		 cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+		 credentials: 'same-origin', // include, *same-origin, omit
+		 headers: {
+			'Content-Type': 'application/json',
+			// 'Content-Type': 'application/x-www-form-urlencoded',
+		 },
+		 redirect: 'follow', // manual, *follow, error
+		 referrer: 'no-referrer', // no-referrer, *client
+		 body: JSON.stringify(data), // body data type must match "Content-Type" header
+	  })
+	  .then(response => response.json()); // parses JSON response into native Javascript objects 
+   }
+
 async function printHighscore(list) {
 	if (list !== null && list !== undefined) {
+		var ol = document.getElementById("hsList");
+		ol.innerHTML = "";
 		for (var i=0; i<list.length; i++) {
 			var ob = list[i];
 			var name = ob.name;
 			var score = ob.score;
 			var li = document.createElement("li");
 			li.innerHTML = name + " - " + score + " points";
-			var ol = document.getElementById("hsList");
 			ol.appendChild(li);
+			topTenHighScores.push({name: name, score: score});
 		}
 	}
 }
@@ -379,9 +410,23 @@ function play() {
 	$('#status').text(PLAY);
 }
 function restart() {
+	if (topTenHighScores.some(highscore => highscore.score < score)) {
+		enterNameForHighscore();
+	}
 	frames = 0;
 	PLAY = false;
 	return init();
+}
+
+async function enterNameForHighscore() {
+	const name = prompt("You entered the highscore! What's your name?");
+	const highscore = {
+		name: name,
+		score: score,
+		otherinfo: null
+	};
+	await postHighscore(highscore);
+
 }
 
 function changeSpeed(btn) {
