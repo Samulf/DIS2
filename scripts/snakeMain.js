@@ -410,7 +410,7 @@ function play() {
 	$('#status').text(PLAY);
 }
 function restart() {
-	if (topTenHighScores.some(highscore => highscore.score < score)) {
+	if (topTenHighScores.some(highscore => highscore.score < score) || topTenHighScores.length < 10) {
 		enterNameForHighscore();
 	}
 	frames = 0;
