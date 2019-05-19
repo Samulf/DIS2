@@ -415,6 +415,7 @@ function restart() {
 	if (topTenHighScores.some(highscore => highscore.score < score) || topTenHighScores.length < 10) {
 		enterNameForHighscore();
 	}
+	getHighscores(printHighscore);
 	frames = 0;
 	PLAY = false;
 	return init();
