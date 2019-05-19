@@ -367,7 +367,8 @@ async function postHighscore(highscore) {
 	const url = 'https://snök.azurewebsites.net/api/savehighscore';
 
 	postData(url, highscore)
-  		.then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
+		.then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
+		.then(getHighscores(printHighscore))
 		.catch(error => console.error(error));
 }
 
@@ -409,6 +410,7 @@ function play() {
 	PLAY = !PLAY;
 	$('#status').text(PLAY);
 }
+
 function restart() {
 	if (topTenHighScores.some(highscore => highscore.score < score) || topTenHighScores.length < 10) {
 		enterNameForHighscore();
