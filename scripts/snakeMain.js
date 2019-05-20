@@ -368,6 +368,9 @@ function checkSize() {
 		windowSizeIsWide = true;
 		$("#canvasContainer").addClass("canvasContainer-normal");
 		$("#canvasContainer").removeClass("canvasContainer-small");
+	} else if (windowSizeIsWide) {
+		$("#canvasContainer").css("height", 500);
+		$("#canvasContainer").css("width", 500);
 	}
 }
 

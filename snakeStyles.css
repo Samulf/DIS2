@@ -53,14 +53,14 @@
 .canvasContainer-normal {
 	position: relative;
 	height: 500px;
-	/* width: 500px; */
+	width: 500px;
 	max-width: 500px;
 	min-width: 500px;
 	margin: 0 auto;
    }
 .canvasContainer-small {
 	position: relative;
-	height: 950px;
+	/* height: 950px; */
 	max-width: 950px;
 	min-width: 950px;
 	margin: 0 auto;
