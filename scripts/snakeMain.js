@@ -2,7 +2,7 @@
 //#region Variables and constants
 // constants  
 const
-	COLS = 50,
+	COLS = 26,
 	ROWS = 26,
 	ENEMYCOUNT = 1,
 	// cell types
@@ -28,6 +28,7 @@ const
 
 // variables
 var PLAY = true,
+	windowSizeIsWide = true,
 	speed = NORMAL,
 	canvas,
 	ctx,
@@ -324,13 +325,8 @@ function drawBorder(xPos, yPos, width, height, thickness = 1) {
 }
 
 function main() {
-	canvas = document.createElement("canvas");
-	canvas.width = COLS * 20;
-	canvas.height = ROWS * 20;
-	ctx = canvas.getContext("2d");
-	document.body.appendChild(canvas);
-	ctx.font = "15px Helvetica";
-
+	createCanvas();
+	checkSize();
 	frames = 0;
 	keystate = {};
 
@@ -351,6 +347,30 @@ function main() {
 	init();
 	loop();
 
+}
+
+function checkSize() {
+	console.log("checkSize!");
+	const w = window.innerWidth;
+	if (w <= 992 && windowSizeIsWide) {
+		console.log("den blev liten!");
+		windowSizeIsWide = false;
+		$("#canvasContainer").addClass("canvasContainer-small");
+		$("#canvasContainer").removeClass("canvasContainer-normal");
+	} else if (w > 992 && !windowSizeIsWide) {
+		console.log("den blev stor!");
+		windowSizeIsWide = true;
+		$("#canvasContainer").addClass("canvasContainer-normal");
+		$("#canvasContainer").removeClass("canvasContainer-small");
+	}
+}
+
+function createCanvas() {
+	canvas = document.getElementById("snukCanvas");
+	canvas.width = COLS * 20;
+	canvas.height = ROWS * 20;
+	ctx = canvas.getContext("2d");
+	ctx.font = "15px Helvetica";
 }
 
 async function getHighscores(printHighscore) {
@@ -422,7 +442,7 @@ function restart() {
 }
 
 async function enterNameForHighscore() {
-	const name = prompt("You entered the highscore! What's your name?");
+	const name = prompt("You entered the highscore with " + score + " points! What's your name?").substring(0, 11);
 	const highscore = {
 		name: name,
 		score: score,

@@ -1,0 +1,61 @@
+#snukCanvas {
+	display: block;
+	position: absolute;
+	border: 2px solid white;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+
+	width: 100%;
+	height: auto;
+}
+
+.img-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;	
+	margin-bottom: 25px;
+	height: 25px;
+}
+
+#snukHeader {
+	margin-top: 20px;
+	height: 65px;
+	width: auto;
+	/* height: auto;
+	max-width: 100%; */
+}
+
+#snukRow {
+	margin-top: 10px;
+	/* background-color: red; */
+   }
+
+#sideBox {
+	margin:50px;
+	height: 400px;
+	justify-content: center;
+	background-color:black;
+   }
+
+.side-list {
+	margin-left: 60px;
+	color:white;
+}
+
+.canvasContainer-normal {
+	position: relative;
+	height: 500px;
+	max-width: 500px;
+	min-width: 500px;
+	margin: 0 auto;
+   }
+.canvasContainer-small {
+	position: relative;
+	height: 950px;
+	max-width: 950px;
+	min-width: 950px;
+	margin: 0 auto;
+   }

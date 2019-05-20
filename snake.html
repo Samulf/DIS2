@@ -2,20 +2,9 @@
 
 <head>
 	<meta charset="UTF-8">
-	<link rel='shortcut icon' type='image/x-icon' href='bilder/favicon.ico' />
+	<link rel='shortcut icon' type='image/x-icon' href='bilder/snuk/favicon.ico' />
+	<link href="snakeStyles.css" type="text/css" rel="Stylesheet">
 	<title>Snake focksake</title>
-	<style>
-		canvas {
-			display: block;
-			position: absolute;
-			border: 1px solid #000;
-			margin: auto;
-			top: 0;
-			bottom: 0;
-			right: 0;
-			left: 0;
-		}
-	</style>
 
 	<!-- CDNS -->
 	<region>
@@ -31,9 +20,9 @@
 	</region>
 </head>
 
-<body>
+<body onresize="checkSize()" style="background-color: black">
 
-	<div style="margin: 10px;">
+	<!-- <div style="margin: 10px;">
 		<div>
 			<h3 id="status"></h3>
 			<button class="btn btn-primary btn-large" onClick="play()">Spela</button>
@@ -51,7 +40,41 @@
 
 			</ol>
 		</div>
-	</div>
+	</div> -->
+	<div class="container-fluid" style="background-color:black">
+		<div class="container-fluid" style="height: 100px; background-color: #000">
+			<img class="img-center" id="snukHeader" src="./bilder/snuk/snuk.png" />
+		</div>
+		<div class="row" id="snukRow">
 
+			<div class="col-sm-4 hidden-sm">
+				<div id="sideBox">
+					<img class="img-center" src="./bilder/snuk/hspurple.png" />
+					<ol id="hsList" class="side-list"></ol>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div id="canvasContainer" class="container canvasContainer-normal" style="background-color:yellow">
+					<canvas id="snukCanvas"></canvas>
+				</div>
+			</div>
+
+			<div class="col-sm-4 hidden-sm">
+				<div id="sideBox">
+					<img class="img-center" src="./bilder/snuk/howto.png" />
+					<ul class="side-list">
+						<li>Change direction with arrows</li>
+						<li>Watch out for enemy</li>
+						<li>Eat red food</li>
+						<li>Restart with space</li>
+						<li>If game crash, i don't care</li>
+					</ul>
+				</div>
+			</div>
+		   
+		</div>
+		
+	</div>
 	<script src="scripts/snakeMain.js"></script>
 </body>
