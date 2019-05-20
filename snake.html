@@ -47,20 +47,20 @@
 		</div>
 		<div class="row" id="snukRow">
 
-			<div class="col-sm-4 hidden-sm">
+			<div class="col-md-4 visible-lg">
 				<div id="sideBox">
 					<img class="img-center" src="./bilder/snuk/hspurple.png" />
 					<ol id="hsList" class="side-list"></ol>
 				</div>
 			</div>
 
-			<div class="col-sm-4">
+			<div class="col-md-4">
 				<div id="canvasContainer" class="container canvasContainer-normal" style="background-color:yellow">
 					<canvas id="snukCanvas"></canvas>
 				</div>
 			</div>
 
-			<div class="col-sm-4 hidden-sm">
+			<div class="col-sm-4 visible-lg">
 				<div id="sideBox">
 					<img class="img-center" src="./bilder/snuk/howto.png" />
 					<ul class="side-list">
@@ -72,9 +72,30 @@
 					</ul>
 				</div>
 			</div>
-		   
+
 		</div>
-		
+
+		<div class="container" style="margin-top: 200px">
+				<!-- <div class="row">
+						<div class="btn-toolbar" role="toolbar">
+							<div class="btn-group mr-2" role="group">
+								<button type="button" class="btn btn-secondary">^</button>
+							</div>
+						</div>
+					</div> -->
+			<div class="row">
+				<div class="btn-toolbar center" role="toolbar" aria-label="Toolbar with button groups">
+					<div class="btn-group mr-2" role="group" aria-label="First group">
+						<button id="btn-left" type="button" class="btn btn-success bb"><</button>
+						<button id="btn-up" type="button" class="btn btn-success bb">^</button>
+						<button id="btn-right" type="button" class="btn btn-success bb">></button>
+						<button id="btn-down" type="button" class="btn btn-success bb">V</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
 	</div>
 	<script src="scripts/snakeMain.js"></script>
 </body>

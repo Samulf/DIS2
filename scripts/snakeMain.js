@@ -349,15 +349,21 @@ function main() {
 
 }
 
+const GRÄNSEN = 1375; 
+
 function checkSize() {
 	console.log("checkSize!");
 	const w = window.innerWidth;
-	if (w <= 992 && windowSizeIsWide) {
+	if (w <= GRÄNSEN && windowSizeIsWide) {
 		console.log("den blev liten!");
+		console.log(w);
 		windowSizeIsWide = false;
 		$("#canvasContainer").addClass("canvasContainer-small");
 		$("#canvasContainer").removeClass("canvasContainer-normal");
-	} else if (w > 992 && !windowSizeIsWide) {
+		$("#canvasContainer").css("height", w);
+		$("#canvasContainer").css("width", w);
+
+	} else if (w > GRÄNSEN && !windowSizeIsWide) {
 		console.log("den blev stor!");
 		windowSizeIsWide = true;
 		$("#canvasContainer").addClass("canvasContainer-normal");
@@ -470,3 +476,8 @@ function changeSpeed(btn) {
 }
 
 main();
+
+$('#btn-left').on('click', () => snake.direction = LEFT);
+$('#btn-up').on('click', () => snake.direction = UP);
+$('#btn-right').on('click', () => snake.direction = RIGHT);
+$('#btn-down').on('click', () => snake.direction = DOWN);

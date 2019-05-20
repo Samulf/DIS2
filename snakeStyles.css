@@ -45,9 +45,15 @@
 	color:white;
 }
 
+.bb {
+	width: 100px;
+	height: 100px;
+}
+
 .canvasContainer-normal {
 	position: relative;
 	height: 500px;
+	/* width: 500px; */
 	max-width: 500px;
 	min-width: 500px;
 	margin: 0 auto;
