@@ -118,8 +118,8 @@ function getCellArrayForType(cellType) {
 }
 
 async function init() {
+	$('#play-pause').addClass('glyphicon glyphicon-play');
 	await getHighscores(printHighscore)
-	$('#status').text(PLAY);
 	grid.init(EMPTY, COLS, ROWS);
 	score = 0;
 
@@ -326,7 +326,7 @@ function drawBorder(xPos, yPos, width, height, thickness = 1) {
 
 function main() {
 	createCanvas();
-	checkSize();
+	// checkSize();
 	frames = 0;
 	keystate = {};
 
@@ -349,34 +349,35 @@ function main() {
 
 }
 
-const GRÄNSEN = 1375; 
+// const GRÄNSEN = 1375; 
 
-function checkSize() {
-	console.log("checkSize!");
-	const w = window.innerWidth;
-	const w1 = w - 100;
-	if (w <= GRÄNSEN && windowSizeIsWide) {
-		console.log("den blev liten!");
-		console.log(w);
-		windowSizeIsWide = false;
-		$("#canvasContainer").addClass("canvasContainer-small");
-		$("#canvasContainer").removeClass("canvasContainer-normal");
-		$("#canvasContainer").css("height", w1);
-		$("#canvasContainer").css("width", w1);
+// function checkSize() {
+// 	console.log("checkSize!");
+// 	const w = window.innerWidth;
+// 	const w1 = w - 200;
+// 	if (w <= GRÄNSEN && windowSizeIsWide) {
+// 		console.log("den blev liten!");
+// 		console.log(w);
+// 		windowSizeIsWide = false;
+// 		$("#canvasContainer").addClass("canvasContainer-small");
+// 		$("#canvasContainer").removeClass("canvasContainer-normal");
+// 		$("#canvasContainer").css("height", w1);
+// 		$("#canvasContainer").css("width", w1);
 
-	} else if (w > GRÄNSEN && !windowSizeIsWide) {
-		console.log("den blev stor!");
-		windowSizeIsWide = true;
-		$("#canvasContainer").addClass("canvasContainer-normal");
-		$("#canvasContainer").removeClass("canvasContainer-small");
-	} else if (windowSizeIsWide) {
-		$("#canvasContainer").css("height", 500);
-		$("#canvasContainer").css("width", 500);
-	} else if (!windowSizeIsWide) {
-		$("#canvasContainer").css("height", w1);
-		$("#canvasContainer").css("width", w1);
-	}
-}
+// 	} else if (w > GRÄNSEN && !windowSizeIsWide) {
+// 		console.log("den blev stor!");
+// 		windowSizeIsWide = true;
+// 		$("#canvasContainer").addClass("canvasContainer-normal");
+// 		$("#canvasContainer").removeClass("canvasContainer-small");
+// 	} else if (windowSizeIsWide) {
+// 		$("#canvasContainer").css("height", 500);
+// 		$("#canvasContainer").css("width", 500);
+// 	} else if (!windowSizeIsWide) {
+// 		$("#canvasContainer").css("height", w1);
+// 		$("#canvasContainer").css("width", w1);
+// 		$("#canvasContainer").css("max-width", w1);
+// 	}
+// }
 
 function createCanvas() {
 	canvas = document.getElementById("snukCanvas");
@@ -441,7 +442,17 @@ async function printHighscore(list) {
 
 function play() {
 	PLAY = !PLAY;
-	$('#status').text(PLAY);
+	setPlayPauseIcon()
+}
+
+function setPlayPauseIcon() {
+	if (PLAY) {
+		$('#play-pause').removeClass("glyphicon glyphicon-pause");
+		$('#play-pause').addClass("glyphicon glyphicon-play");
+	} else {
+		$('#play-pause').removeClass("glyphicon glyphicon-play");
+		$('#play-pause').addClass("glyphicon glyphicon-pause");
+	}
 }
 
 function restart() {

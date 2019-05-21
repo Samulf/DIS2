@@ -54,9 +54,31 @@
 				</div>
 			</div>
 
-			<div class="col-md-4">
+			<div class="col-md-4" style="text-align: center">
 				<div id="canvasContainer" class="container canvasContainer-normal" style="background-color:yellow">
 					<canvas id="snukCanvas"></canvas>
+				</div>
+
+				<div class="row hidden-lg">
+					<div id="buttons" class="btn-toolbar center" role="toolbar">
+						<button id="btn-left" type="button" class="btn btn-success bb">
+							<span class="glyphicon glyphicon-arrow-left"></span>
+						</button>
+						<button id="btn-up" type="button" class="btn btn-success bb">
+							<span class="glyphicon glyphicon-arrow-up"></span>
+						</button>
+						<button id="btn-right" type="button" class="btn btn-success bb">
+							<span class="glyphicon glyphicon-arrow-right"></span>
+						</button>
+						<button id="btn-down" type="button" class="btn btn-success bb">
+							<span class="glyphicon glyphicon-arrow-down"></span>
+						</button>
+					</div>
+				</div>
+				<div class="row hidden-lg" style="margin-top:10px">
+					<button class="btn btn-primary btn-lg" onClick="play()">
+							<span id="play-pause" ></span>
+					</button>
 				</div>
 			</div>
 
@@ -76,23 +98,7 @@
 		</div>
 
 		<div class="container hidden-lg" style="margin-top: 200px">
-				<!-- <div class="row">
-						<div class="btn-toolbar" role="toolbar">
-							<div class="btn-group mr-2" role="group">
-								<button type="button" class="btn btn-secondary">^</button>
-							</div>
-						</div>
-					</div> -->
-			<div class="row">
-				<div class="btn-toolbar center" role="toolbar" aria-label="Toolbar with button groups">
-					<div class="btn-group mr-2" role="group" aria-label="First group">
-						<button id="btn-left" type="button" class="btn btn-success bb"><</button>
-						<button id="btn-up" type="button" class="btn btn-success bb">^</button>
-						<button id="btn-right" type="button" class="btn btn-success bb">></button>
-						<button id="btn-down" type="button" class="btn btn-success bb">V</button>
-					</div>
-				</div>
-			</div>
+	
 
 		</div>
 
