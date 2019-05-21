@@ -354,14 +354,15 @@ const GRÄNSEN = 1375;
 function checkSize() {
 	console.log("checkSize!");
 	const w = window.innerWidth;
+	const w1 = w - 100;
 	if (w <= GRÄNSEN && windowSizeIsWide) {
 		console.log("den blev liten!");
 		console.log(w);
 		windowSizeIsWide = false;
 		$("#canvasContainer").addClass("canvasContainer-small");
 		$("#canvasContainer").removeClass("canvasContainer-normal");
-		$("#canvasContainer").css("height", w);
-		$("#canvasContainer").css("width", w);
+		$("#canvasContainer").css("height", w1);
+		$("#canvasContainer").css("width", w1);
 
 	} else if (w > GRÄNSEN && !windowSizeIsWide) {
 		console.log("den blev stor!");
@@ -371,6 +372,9 @@ function checkSize() {
 	} else if (windowSizeIsWide) {
 		$("#canvasContainer").css("height", 500);
 		$("#canvasContainer").css("width", 500);
+	} else if (!windowSizeIsWide) {
+		$("#canvasContainer").css("height", w1);
+		$("#canvasContainer").css("width", w1);
 	}
 }
 
