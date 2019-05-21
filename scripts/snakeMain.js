@@ -118,7 +118,7 @@ function getCellArrayForType(cellType) {
 }
 
 async function init() {
-	$('#play-pause').addClass('glyphicon glyphicon-play');
+	$('#play-pause').addClass('glyphicon glyphicon-pause');
 	await getHighscores(printHighscore)
 	grid.init(EMPTY, COLS, ROWS);
 	score = 0;
@@ -447,11 +447,11 @@ function play() {
 
 function setPlayPauseIcon() {
 	if (PLAY) {
-		$('#play-pause').removeClass("glyphicon glyphicon-pause");
-		$('#play-pause').addClass("glyphicon glyphicon-play");
-	} else {
 		$('#play-pause').removeClass("glyphicon glyphicon-play");
 		$('#play-pause').addClass("glyphicon glyphicon-pause");
+	} else {
+		$('#play-pause').removeClass("glyphicon glyphicon-pause");
+		$('#play-pause').addClass("glyphicon glyphicon-play");
 	}
 }
 
